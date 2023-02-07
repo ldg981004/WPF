@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="LearningProject.Projects.이동길.detail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearningProject.Projects.이동길"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <StackPanel>
+            <Label Content="이름"/>
+            <Label x:Name="lb_name" Grid.Row="1"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Label Content="전화번호"/>
+                <Label x:Name="lb_phone"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Label Content="지역"/>
+                <Label x:Name="lb_area"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

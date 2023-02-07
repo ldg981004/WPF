@@ -1,0 +1,37 @@
+﻿<Window x:Class="LearningProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearningProject"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Grid x:Name="grid1">
+        <Grid x:Name="panel_selectList">
+            <StackPanel x:Name="stack_selectList" Orientation="Vertical">
+                <Button Content="김지원"
+                        Width="300" Height="300"
+                        FontSize="40"
+                        Margin="10"
+                        Click="Button_Click">
+                    
+                </Button>
+                <Button Content="유동훈"
+                        Width="300" Height="300"
+                        FontSize="40"
+                        Margin="10"
+                        Click="Button_Click_1">
+
+                </Button>
+                <Button Content="이동길"
+                        Width="300" Height="300"
+                        FontSize="40"
+                        Margin="10"
+                        Click="Button_Click_2">
+
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="LearningProject.Projects.이동길.bu_me1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearningProject.Projects.이동길"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Width="780" Height="345" MinHeight="345" MinWidth="780">
+
+    <UserControl.Resources>
+        <Style x:Key="side_button" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Opacity" Value="0.85"/>
+            
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid Width="780">
+        <TextBlock x:Name="textbox1">
+            <Hyperlink x:Name="hy1" TextDecorations="None">
+               <Image x:Name="image1" Visibility="Visible" Source="/Resources/lip.webp"/>
+           </Hyperlink>
+
+        </TextBlock>
+
+        <Grid HorizontalAlignment="Right" Margin="0,5,20,0">
+            <StackPanel Orientation="Vertical">
+                <Label x:Name="lst">
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                               TextDecorations="None"
+                               NavigateUri="https://www.inven.co.kr/webzine/news/?news=275483">
+                        <Label Content="로스트 인 플레이"
+                               Style="{StaticResource side_button}" MouseEnter="lst_MouseEnter" />
+                    </Hyperlink>
+                </Label>
+
+                <Label>
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                               TextDecorations="None"
+                               NavigateUri="https://www.inven.co.kr/webzine/news/?news=274892">
+                        <Label x:Name="bwc" Content="블랙워치크래프트"
+                               Style="{StaticResource side_button}" MouseEnter="bwc_MouseEnter"/>
+                    </Hyperlink>
+                </Label>
+
+                <Label>
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                               TextDecorations="None"
+                               NavigateUri="https://www.inven.co.kr/webzine/news/?news=275486">
+                        <Label Content="벨브의 미래"
+                               Style="{StaticResource side_button}" MouseEnter="bm_MouseEnter"/>
+                    </Hyperlink>
+                </Label>
+
+                <Label>
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                               TextDecorations="None"
+                               NavigateUri="https://www.inven.co.kr/webzine/news/?news=275432">
+                        <Label Content="타워 오브 판타지"
+                               Style="{StaticResource side_button}" MouseEnter="top_MouseEnter"/>
+                    </Hyperlink>
+                </Label>
+
+                <Label>
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                               TextDecorations="None"
+                               NavigateUri="https://www.inven.co.kr/webzine/news/?news=275427">
+                        <Label Content="롤러스케이트+슈팅"
+                               Style="{StaticResource side_button}" MouseEnter="rs_MouseEnter"/>
+                    </Hyperlink>
+                </Label>
+
+                <Label>
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                               TextDecorations="None"
+                               NavigateUri="https://www.inven.co.kr/webzine/news/?news=275370">
+                        <Label Content="8월 2주차 순위분석"
+                               Style="{StaticResource side_button}" MouseEnter="eight_MouseEnter"/>
+                    </Hyperlink>
+                </Label>
+
+                <Label>
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                               TextDecorations="None"
+                               NavigateUri="https://www.inven.co.kr/webzine/news/?news=275313">
+                        <Label Content="투 포인트 캠퍼스"
+                               Style="{StaticResource side_button}" MouseEnter="tpc_MouseEnter"/>
+                    </Hyperlink>
+                </Label>
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+</UserControl>

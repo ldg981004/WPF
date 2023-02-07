@@ -1,0 +1,636 @@
+﻿<UserControl x:Class="LearningProject.Projects.이동길.inven"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearningProject.Projects.이동길"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <UserControl.Resources>
+
+        <Style x:Key="top_button" TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Margin" Value="3,0,0,0"/>
+
+
+        </Style>
+
+        <Style x:Key="tb_tb" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="11"/>
+        </Style>
+
+        <Style x:Key="top_button2" TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="#b41010"/>
+            <Setter Property="BorderBrush" Value="#b41010"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Background" Value="#b41010"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="tb2_tb" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Gold">
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel>
+            <Grid Width="1920" DockPanel.Dock="Top" Height="60" Background="Black">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://lineage2m.plaync.com/update/2022/220809_update"
+                                       TextDecorations="None">
+                            <Image x:Name="inven_top" Source="/Resources/inven_top.jpg" Margin="0,0,0,7"/>
+                            </Hyperlink>
+                </TextBlock>
+
+
+            </Grid>
+
+            <Grid DockPanel.Dock="Top" Height="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="640"/>
+                    <ColumnDefinition Width="640"/>
+                    <ColumnDefinition Width="640"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <StackPanel Orientation="Horizontal" >
+                        <Border Name="app" Background="White" BorderBrush="White">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://m.inven.co.kr/">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image x:Name="app_img" Source="app.png" Stretch="None"></Image>
+                                        <TextBlock VerticalAlignment="Center" Foreground ="Black" FontSize="10" Text="인벤 공식 앱"></TextBlock>
+                                    </StackPanel>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border Name="mobile" Background="White" BorderBrush="White">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://m.inven.co.kr/">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image x:Name="mobile_img" Source="mobile.png" Stretch="None"></Image>
+                                        <TextBlock VerticalAlignment="Center" FontSize="10" Foreground="Black" Text="모바일 인벤"></TextBlock>
+                                    </StackPanel>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="509">
+                        <Border x:Name="web" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.inven.co.kr/">
+                                    <Label Content="웹진" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="con" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://console.inven.co.kr/">
+                                    <Label Content="콘솔" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="it" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://it.inven.co.kr/">
+                                    <Label Content="IT" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="indi" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://indie.inven.co.kr/">
+                                    <Label Content="인디" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="es" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://esports.inven.co.kr/">
+                                    <Label Content="e스포츠" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="vr" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://vr.inven.co.kr/">
+                                    <Label Content="VR" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="sag" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://pick.inven.co.kr/">
+                                    <Label Content="사전예약" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="fri" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://friends.inven.co.kr/">
+                                    <Label Content="프렌즈" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="inc" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.enchantenter.co.kr/">
+                                    <Label Content="인챈트" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="imart" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://imart.inven.co.kr/">
+                                    <Label Content="아이마트" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="market" Style="{StaticResource top_button}">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.marketinven.com/">
+                                    <Label Content="마켓인벤" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="2" Width ="210"  HorizontalAlignment="Right">
+                    <StackPanel Orientation="Horizontal">
+                        <Border x:Name="sign" Style="{StaticResource top_button}" Margin="0,0,0,0">
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://member.inven.co.kr/user/aquarius/join/">
+                                    <Label Content="회원가입" Style="{StaticResource tb_tb}"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="log" Style="{StaticResource top_button}" >
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://member.inven.co.kr/user/scorpio/mlogin">
+                                    <Label Content="로그인" Background="#ff7e00" Foreground="White" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="8.5"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                        <Border x:Name="qui" Style="{StaticResource top_button}" >
+                            <TextBlock VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://member.inven.co.kr/user/scorpio/mlogin">
+                                    <Label Content="퀵링크" Background="#02aa35" Margin="0,0,30,0" Foreground="White" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="8.5"/>
+                                </Hyperlink>
+                            </TextBlock>
+                        </Border>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <Grid DockPanel.Dock="Top" Background="#a40606" Height="60" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400" MinWidth="400"/>
+                    <ColumnDefinition Width="873" MinWidth="873" MaxWidth="873"/>
+                    <ColumnDefinition Width="400" MinWidth="400"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Right" Margin="0,0,50,0">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://www.inven.co.kr/"
+                                       TextDecorations="None">
+                        <Image Name="Inven_mark" Source="/Resources/Inven_mark.png"/>
+                            </Hyperlink>
+                    </TextBlock>
+
+                </Grid>
+
+                <Grid Grid.Column="1" Background="#b41010">
+                    <StackPanel Orientation="Horizontal" Margin="50,0,0,0">
+                        <Border Width="50" Style="{StaticResource top_button2}" Height="60" VerticalAlignment="Bottom">
+                            <Label VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.inven.co.kr/webzine/news/">
+                                    <Label Content="뉴스"
+                                           Style="{StaticResource tb2_tb}"/>
+                                </Hyperlink>
+                            </Label>
+                        </Border>
+
+                        <Border Width="70" Style="{StaticResource top_button2}" Margin="20,0,0,0">
+                            <Label VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.inven.co.kr/webzine/platform/?nplatform=1">
+                                    <Label Content="플랫폼"
+                                           Style="{StaticResource tb2_tb}"/>
+                                </Hyperlink>
+                            </Label>
+                        </Border>
+
+                        <Border Width="50" Style="{StaticResource top_button2}" Margin="20,0,0,0">
+                            <Label VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.inven.co.kr/webzine/news/?sclass=12platform=gamereview">
+                                    <Label Content="리뷰"
+                                           Style="{StaticResource tb2_tb}"/>
+                                </Hyperlink>
+                            </Label>
+                        </Border>
+
+                        <Border Width="80" Style="{StaticResource top_button2}" Margin="20,0,0,0">
+                            <Label VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.inven.co.kr/webzine/special/gameshow.php">
+                                    <Label Content="특별취재"
+                                           Style="{StaticResource tb2_tb}"/>
+                                </Hyperlink>
+                            </Label>
+                        </Border>
+
+                        <Border Width="80" Style="{StaticResource top_button2}" Margin="20,0,0,0">
+                            <Label VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://www.inven.co.kr/webzine/zone/gamer/">
+                                    <Label Content="게이머존"
+                                           Style="{StaticResource tb2_tb}"/>
+                                </Hyperlink>
+                            </Label>
+                        </Border>
+
+                        <Border Width="50" Style="{StaticResource top_button2}" Margin="20,0,0,0">
+                            <Label VerticalAlignment="Center">
+                                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                           TextDecorations="None"
+                                           NavigateUri="https://igc.inven.co.kr/">
+                                    <Label Content="IGC"
+                                           Style="{StaticResource tb2_tb}"/>
+                                </Hyperlink>
+                            </Label>
+                        </Border>
+
+                        <TextBlock VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://actscp01.ltgamesglobal.com/xian/act/202206/overseas/pc.html"
+                                       TextDecorations="None">
+                            <Image VerticalAlignment="Bottom" x:Name="youtube" Source="/Resources/youtube.png" Margin="50,0,5,7" Height="45" Width="35"/>
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://www.facebook.com/invennews/"
+                                       TextDecorations="None">
+                            <Image VerticalAlignment="Bottom" x:Name="facebook" Source="/Resources/facebook.png" Margin="0,0,5,7" Height="45" Width="35"/>
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://twitter.com/inventeam/"
+                                       TextDecorations="None">
+                            <Image VerticalAlignment="Bottom" x:Name="twi" Source="/Resources/twi.png" Margin="0,0,5,7" Height="45" Width="35"/>
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://www.metacritic.com/publication/inven?filter=games"
+                                       TextDecorations="None">
+                            <Image VerticalAlignment="Bottom" x:Name="me" Source="/Resources/me.png" Margin="0,0,5,7" Height="45" Width="35"/>
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://opencritic.com/outlet/805/inven"
+                                       TextDecorations="None">
+                            <Image VerticalAlignment="Bottom" x:Name="pm" Source="/Resources/pm.png" Margin="0,3,5,7" Height="45" Width="35"/>
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://opencritic.com/outlet/805/inven"
+                                       TextDecorations="None">
+                            <Image VerticalAlignment="Bottom" x:Name="search" Source="/Resources/search.png" Margin="0,3,5,7" Height="45" Width="35"/>
+                            </Hyperlink>
+                        </TextBlock>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1050"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Width="435" Height="920">
+                    <TextBlock Margin="0,0,7,0" Background="White">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://lineage.plaync.com/update/history/2022/220727_update#section-1"
+                                       TextDecorations="None">
+                             <Image x:Name="Inven_Left" Source="/Resources/Inven_Left.PNG" Stretch="UniformToFill"/>
+                            </Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="800" MinWidth="800" MaxWidth="800"/>
+                        <ColumnDefinition Width="250" MinWidth="250" MaxWidth="250"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" HorizontalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="123" MinHeight="123" MaxHeight="123"/>
+                            <RowDefinition Height="368" MinHeight="368" MaxHeight="368"/>
+                            <RowDefinition Height="306" MinHeight="306" MaxHeight="306"/>
+                            <RowDefinition Height="123" MinHeight="123" MaxHeight="123"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Label Width="750" Height="80" Margin="5" Background="#b41010">
+                            </Label>
+                            <TextBlock Height="100" Width="660" HorizontalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://pick.inven.co.kr/campaign/478/exile"
+                                       TextDecorations="None">
+                                       <Image Stretch="Fill" Source="/Resources/ad.jpg"/>
+                            </Hyperlink>
+                            </TextBlock>
+                        </Grid>
+
+                        <Grid Width="800" Height="368" MinWidth="800" MinHeight="368" x:Name="inven_main1" Grid.Row="1">
+
+                        </Grid>
+
+                        <Grid Width="800" Height="306" MinHeight="306" MinWidth="800" x:Name="inven_main2"  Grid.Row="2">
+
+                        </Grid>
+
+                        <Grid Width="800" Height="123" MinHeight="123" MinWidth="800" Grid.Row="3">
+
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Width="250" Height="257" MinHeight="257" MinWidth="250">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://pick.inven.co.kr/campaign/474/sinseonnoleum"
+                                       TextDecorations="None">
+                            <Image x:Name="inven_main2_1" Source="/Resources/inven_main2-1.jpg" Margin="0,0,0,7"/>
+                            </Hyperlink>
+                            </TextBlock>
+
+                            <Border BorderBrush="LightGray" BorderThickness="1">
+                                <Grid Background="#f8f8f8" Height="250">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" MinHeight="50"/>
+                                        <RowDefinition Height="200" MinHeight="200"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="124" MinWidth="124"/>
+                                        <ColumnDefinition Width="124" MinWidth="124"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Row="0" Grid.Column="0">
+                                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="13" FontWeight="Bold" Margin= "5,0,0,12.5">인벤 <Run Foreground="#2180f4">인기</Run> 사이트</TextBlock>
+                                    </Grid>
+
+                                    <Grid Grid.Row="0" Grid.Column="1">
+                                        <Label VerticalAlignment="Center" HorizontalAlignment="Right" VerticalContentAlignment="Bottom">
+                                            <Hyperlink Name="hyp01"
+                                                   Foreground="#a9a9a9"
+                                                   TextDecorations="None"
+                                                   MouseEnter="OnMouseEnter"
+                                                   MouseLeave="OnMouseLeave"
+                                                   RequestNavigate="Hyperlink_RequestNavigate"
+                                                   NavigateUri="https://www.inven.co.kr/webzine/news/">
+                                                <Label Foreground="#a9a9a9" Content="더보기+" FontSize="10"/>
+                                            </Hyperlink>
+                                        </Label>
+                                    </Grid>
+
+                                    <Grid Grid.Row="1" Grid.Column="0">
+                                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock Margin="-1,0,0,0">
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://black.inven.co.kr/">
+                                             <Image x:Name="black" HorizontalAlignment="Center" Source="/Resources/black.png" Height="28" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock Margin="0,0,0,0">
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://lostark.inven.co.kr/">
+                                             <Image x:Name="lost" HorizontalAlignment="Center" Source="/Resources/lost.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock Margin="0,0,0,0">
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://lineagem.inven.co.kr/">
+                                             <Image x:Name="lim" HorizontalAlignment="Center" Source="/Resources/lim.png" Height="25" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock Margin="5,0,0,0">
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://maple.inven.co.kr/">
+                                             <Image x:Name="map" HorizontalAlignment="Center" Source="/Resources/map.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock Margin="0,0,0,0">
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://wow.inven.co.kr/">
+                                             <Image x:Name="wow" HorizontalAlignment="Center" Source="/Resources/wow.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock Margin="5,0,0,0">
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://skr.inven.co.kr/">
+                                             <Image x:Name="sr" HorizontalAlignment="Center" Source="/Resources/sr.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Grid Grid.Row="1" Grid.Column="1">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Margin="0,0,0,0">
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://diablo2.inven.co.kr/">
+                                             <Image x:Name="dia" HorizontalAlignment="Center" Source="/Resources/dia.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock>
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://lol.inven.co.kr/">
+                                             <Image x:Name="lol" HorizontalAlignment="Center" Source="/Resources/lol.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock>
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://mhf.inven.co.kr/">
+                                             <Image x:Name="mh" HorizontalAlignment="Center" Source="/Resources/mh.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock>
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://uma.inven.co.kr/">
+                                             <Image x:Name="uma" HorizontalAlignment="Center" Source="/Resources/uma.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock>
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://fifaonline4.inven.co.kr/">
+                                             <Image x:Name="fifa" HorizontalAlignment="Center" Source="/Resources/fifa.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                            <TextBlock>
+                                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                                       TextDecorations="None"
+                                                       NavigateUri="https://splatoon3.inven.co.kr/">
+                                             <Image x:Name="tao" HorizontalAlignment="Center" Source="/Resources/tao.png" Height="30" Width="80"/>
+                                            </Hyperlink>
+                                            </TextBlock>
+
+                                        </StackPanel>
+
+                                    </Grid>
+
+                                </Grid>
+                            </Border>
+
+                            <TextBlock Margin="0,7,0,0">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://www.bigameshow.com/"
+                                       TextDecorations="None">
+                            <Image x:Name="inven_main2_2" Source="/Resources/inven_main2-2.jpg" Margin="0,0,0,7"/>
+                            </Hyperlink>
+                            </TextBlock>
+
+                            <TextBlock>
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://minimap.net/rating/platform"
+                                       TextDecorations="None">
+                             <Image x:Name="inven_main2_3" Source="/Resources/inven_main2-3.jpg" Margin="0,0,0,7"/>
+                            </Hyperlink>
+                            </TextBlock>
+
+
+                        </StackPanel>
+
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="2" Height="920" Width="435">
+                    <TextBlock Margin="7,0,0,0" Background="White">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate"
+                                       NavigateUri="https://lineage.plaync.com/update/history/2022/220727_update#section-1"
+                                       TextDecorations="None">
+                             <Image x:Name="Inven_Right" Source="/Resources/Inven_Left.PNG"  Stretch="UniformToFill"/>
+                            </Hyperlink>
+                    </TextBlock>
+                </Grid>
+            </Grid>
+
+        </DockPanel>
+    </Grid>
+</UserControl>

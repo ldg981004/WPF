@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="LearningProject.Projects.이동길.task7"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearningProject.Projects.이동길"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Height="450" Width="800">
+    
+    <Grid Margin="2,0,-2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <ListView Name="infolist" HorizontalAlignment="Stretch" Height="111"  VerticalAlignment="Center" Width="495" SelectionChanged="infolist_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="번호" DisplayMemberBinding="{Binding item_ID}" Width="30" />
+                    <GridViewColumn Header="이름" DisplayMemberBinding="{Binding item_NAME}" Width="70"/>
+                    <GridViewColumn Header="전화번호" DisplayMemberBinding="{Binding item_PHONE}" Width="100"/>
+                    <GridViewColumn Header="지역" DisplayMemberBinding="{Binding item_AREA}" Width="100"/>
+                    <GridViewColumn Header="생성날짜" DisplayMemberBinding="{Binding item_DAY}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Grid.Row="1" Margin="30">
+            <Border BorderBrush="Black" BorderThickness="2">
+                <Grid x:Name="pannel_selected" Margin="0,0,0,-107"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="create_button" Margin="10" Click="create_button_Click">create</Button>
+                <Button x:Name="update_button" Margin="10" Click="update_button_Click">update</Button>
+                <Button x:Name="delete_button" Margin="10" Click="delete_button_Click">delete</Button>
+            </StackPanel>
+            
+        </Grid>
+
+
+    </Grid>
+</UserControl>
